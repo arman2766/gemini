@@ -1,11 +1,9 @@
-import Main from "./components/Main/Main";
-import Sidebar from "./components/sidebar/Sidebar";
+import ChatLayout from "./components/chat-layout/ChatLayout";
 
 function App() {
   return (
     <>
-      <Sidebar />
-      <Main />
+      <ChatLayout />
     </>
   );
 }

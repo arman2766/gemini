@@ -5,7 +5,7 @@ const Topbar = () => {
     <>
       <div className="top-bar-container">
         <div className="left-side">
-          <h2>Gemini Alpha </h2>
+          <h2>Gemini Alpha 2.0</h2>
         </div>
         <div className="right-side">
           <img

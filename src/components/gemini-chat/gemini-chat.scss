@@ -1,12 +1,15 @@
 .gemini-chat-container {
   color: #fff;
+  width: 100%;
   max-height: calc(100vh - 200px);
+  padding: 24px;
   overflow: auto;
   .submit-container {
     display: flex;
     gap: 12px;
     align-items: center;
     .submit {
+      cursor: pointer;
       background: linear-gradient(90.43deg, #16fcd2 12.72%, #65b5ff 55.05%),
         linear-gradient(0deg, #fff, #fff);
       border-radius: 100px;
@@ -14,6 +17,53 @@
       width: 32px;
       height: 32px;
       stroke: #121212;
+    }
+    .gray-btn-bg {
+      background: #1d1d1d;
+      border-radius: 100px;
+      padding: 6px;
+      width: 32px;
+      height: 32px;
+      stroke: #121212;
+      cursor: not-allowed;
+    }
+  }
+
+  .greeting-container {
+    text-align: center;
+    h1 {
+      background: linear-gradient(90.43deg, #16fcd2 12.72%, #65b5ff 55.05%),
+        linear-gradient(0deg, #fff, #fff);
+      -webkit-text-fill-color: transparent;
+      -webkit-background-clip: text;
+    }
+  }
+  .welcome-container-card {
+    position: absolute;
+    top: 50%;
+    right: 50%;
+    transform: translate(50%, -50%);
+    display: flex;
+    gap: 24px;
+    .card {
+      color: #f8f8f8;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      gap: 8px;
+      background: linear-gradient(120deg, #16fcd2 12.72%, #65b5ff 55.05%),
+        linear-gradient(0deg, #fff, #fff);
+      color: #121212;
+      border-radius: 12px;
+      padding: 24px;
+      h2 {
+        font-size: 16px;
+      }
+      p {
+        font-size: 12px;
+      }
     }
   }
   .loading {
@@ -49,6 +99,7 @@
         border-radius: 24px 4px 24px 23px;
       }
       .answer {
+        width: fit-content;
         max-width: 700px;
         background: rgba(255, 255, 255, 0.05);
         backdrop-filter: blur(200px);

@@ -8,9 +8,10 @@ import {
 import React, { useState } from "react";
 import "./Sidebar.scss";
 
-const Sidebar = ({ chatHistory }) => {
+const Sidebar = ({ handleInputFocus }) => {
   const [extended, setExtended] = useState(false);
-  console.log("extended", extended);
+  const chatHistory = localStorage.getItem("chatHistory");
+  const formatChatHistory = JSON.parse(chatHistory);
 
   const handleCollapse = () => {
     setExtended((prev) => !prev);
@@ -24,7 +25,13 @@ const Sidebar = ({ chatHistory }) => {
           cursor={"pointer"}
           onClick={handleCollapse}
         />
-        <span className="new-chat">
+        <span
+          className="new-chat"
+          onClick={() => {
+            handleInputFocus();
+            handleCollapse();
+          }}
+        >
           <MessageCirclePlus color="#121212" />
           {extended && " New Chat"}
         </span>
@@ -32,7 +39,9 @@ const Sidebar = ({ chatHistory }) => {
         {extended && (
           <span className="recent-chat">
             <h2>Recent</h2>
-            <p> What is React js and ........</p>
+            {formatChatHistory?.map((chat, index) => {
+              return <p key={index}>{chat.question}</p>;
+            })}
           </span>
         )}
       </div>
