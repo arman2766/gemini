@@ -1,0 +1,43 @@
+.sidebar-container {
+  height: 100vh;
+  background: #0d0f27;
+  width: fit-content;
+  max-width: 200px;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  align-items: start;
+  padding: 24px;
+  color: #8f93c0;
+  transition: 0.5s ease-in-out;
+  .top-container {
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+    .new-chat {
+      display: flex;
+      gap: 6px;
+      align-items: center;
+      width: fit-content;
+      border-radius: 12px;
+      padding: 12px;
+      background: linear-gradient(90.43deg, #16fcd2 12.72%, #65b5ff 55.05%),
+        linear-gradient(0deg, #fff, #fff);
+      color: #fff;
+    }
+    .recent-chat {
+      p {
+        width: 180px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        padding-inline-end: 24px;
+      }
+    }
+  }
+  .bottom-container {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+}

@@ -1,10 +1,14 @@
+import Main from "./components/Main/Main"
+import Sidebar from "./components/sidebar/Sidebar"
+import Topbar from "./components/Topbar/Topbar"
 
 
 function App() {
 
   return (
     <>
-      <h1>Gemini Clone</h1>
+      <Sidebar />
+      <Main />
     </>
   )
 }
