@@ -1,4 +1,4 @@
-import { Image, SendHorizontal } from "lucide-react";
+import { Image, SendHorizontal, Sparkles } from "lucide-react";
 import React, { useState } from "react";
 import ReactMarkdown from "react-markdown";
 import { generateGeminiResponse } from "../../api/geminiApi";
@@ -14,15 +14,14 @@ const GeminiChat = () => {
     if (!input.trim()) return;
 
     setLoading(true);
-    setError(null); // Reset error message on each submit
-
+    setError(null);
     try {
       const geminiResponse = await generateGeminiResponse(input);
       const response = geminiResponse || "Sorry, no response from Gemini.";
 
       // Update chat history with the question and answer
       setChatHistory([...chatHistory, { question: input, answer: response }]);
-      setInput(""); // Clear the input after submission
+      setInput("");
     } catch (error) {
       setError("Failed to get response from Gemini.");
       console.log(error);
@@ -70,7 +69,12 @@ const GeminiChat = () => {
 
       {error && <p className="error-message">{error}</p>}
 
-      {loading && <p>Loading...</p>}
+      {loading && (
+        <span className="loading">
+          <Sparkles className="spark-icon" />
+          Thinking...
+        </span>
+      )}
     </div>
   );
 };
