@@ -1,15 +1,29 @@
-.main-conatiner {
+.main-container {
   width: 100%;
   background: #121212;
   padding: 24px;
   .ask-container {
     position: absolute;
     bottom: 24px;
-    left: 50%;
+
     display: flex;
     align-items: center;
     padding: 24px;
     border-radius: 12px;
+    width: 100%;
+    max-width: 700px;
     border: 2px solid #26ecdb;
+    input[type="text"] {
+      width: 100%;
+      color: #f8f8f8;
+      background: transparent;
+      border: none;
+      padding-inline-end: 12px;
+      &:focus {
+        background: transparent;
+        border: none;
+        outline: none;
+      }
+    }
   }
 }

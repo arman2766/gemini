@@ -1,16 +1,13 @@
-import Main from "./components/Main/Main"
-import Sidebar from "./components/sidebar/Sidebar"
-import Topbar from "./components/Topbar/Topbar"
-
+import Main from "./components/main/Main";
+import Sidebar from "./components/sidebar/Sidebar";
 
 function App() {
-
   return (
     <>
       <Sidebar />
       <Main />
     </>
-  )
+  );
 }
 
-export default App
+export default App;
