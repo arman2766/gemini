@@ -28,6 +28,15 @@
       cursor: not-allowed;
     }
   }
+  .welcome-greeting-container {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    position: absolute;
+    top: 50%;
+    right: 50%;
+    transform: translate(50%, -50%);
+  }
 
   .greeting-container {
     text-align: center;
@@ -39,12 +48,13 @@
     }
   }
   .welcome-container-card {
-    position: absolute;
-    top: 50%;
-    right: 50%;
-    transform: translate(50%, -50%);
+    // position: absolute;
+    // top: 50%;
+    // right: 50%;
+    // transform: translate(50%, -50%);
     display: flex;
     gap: 24px;
+
     .card {
       color: #f8f8f8;
       display: flex;

@@ -34,6 +34,7 @@ const GeminiChat = ({ inputRef }) => {
   const [chatHistory, setChatHistory] = useState([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
+  const [sessionUser, setSessionUser] = useState("to Gemini Alpha");
   const chatHistoryRef = useRef(null);
 
   useEffect(() => {
@@ -73,27 +74,36 @@ const GeminiChat = ({ inputRef }) => {
     }
   };
 
+  useEffect(() => {
+    const user = sessionStorage.getItem("userName");
+    if (user) {
+      setSessionUser(user);
+    }
+  }, []);
+
   return (
     <>
       <div className="gemini-chat-container">
         <Topbar />
-        {chatHistory.length === 0 && !loading && (
-          <div className="greeting-container">
-            <h1>Welcome Arman</h1>
-            <h1>Let’s build something awesome!</h1>
-          </div>
-        )}
-        {chatHistory.length === 0 && !loading && (
-          <div className="welcome-container-card">
-            {welcomeData.map((data, index) => (
-              <div className="card" key={index}>
-                <span>{data.icon}</span>
-                <h2>{data.title}</h2>
-                <p>{data.des}</p>
-              </div>
-            ))}
-          </div>
-        )}
+        <div className="welcome-greeting-container">
+          {chatHistory.length === 0 && !loading && (
+            <div className="greeting-container">
+              <h1>Welcome {sessionUser} </h1>
+              <h1>Let’s build something awesome!</h1>
+            </div>
+          )}
+          {chatHistory.length === 0 && !loading && (
+            <div className="welcome-container-card">
+              {welcomeData.map((data, index) => (
+                <div className="card" key={index}>
+                  <span>{data.icon}</span>
+                  <h2>{data.title}</h2>
+                  <p>{data.des}</p>
+                </div>
+              ))}
+            </div>
+          )}
+        </div>
         <div className="chat-history" ref={chatHistoryRef}>
           {chatHistory.map((chat, index) => (
             <div key={index} className="chat-item">

@@ -1,0 +1,58 @@
+.modal-container {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  max-width: max-content;
+  border-radius: 12px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  background: linear-gradient(120deg, #16fcd2 12.72%, #65b5ff 55.05%),
+    linear-gradient(0deg, #fff, #fff);
+  color: #121212;
+  border-radius: 12px;
+  padding: 12px 24px;
+  input[type="text"] {
+    background: transparent;
+    border: none;
+    color: #121212;
+    padding-inline-end: 12px;
+    &:focus {
+      border: none;
+      outline: none;
+    }
+  }
+  ::placeholder {
+    color: #121212;
+  }
+  .submit {
+    display: flex;
+    align-items: center;
+  }
+  h1 {
+    font-size: 18px;
+  }
+}
+.close-icon {
+  position: absolute;
+  right: 8px;
+  top: 6px;
+  width: 16px;
+  cursor: pointer;
+}
+
+.modal-overlay {
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: saturate(180%) blur(10px);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+}
